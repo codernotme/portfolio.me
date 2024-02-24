@@ -1,16 +1,25 @@
-import React from 'react';
+// Card component
+
+import React, { ReactNode } from 'react';
+import styled from 'styled-components';
 
 interface CardProps {
-  title: string;
-  description: string;
+  description: string | ReactNode; // Accepts either string or JSX elements
 }
 
-const Card: React.FC<CardProps> = ({ title, description }) => {
+const CardContainer = styled.div`
+  // Your card container styles here
+`;
+
+const Description = styled.div`
+  // Styles for the description
+`;
+
+const Card: React.FC<CardProps> = ({ description }) => {
   return (
-    <div className="card">
-      <h2>{title}</h2>
-      <p>{description}</p>
-    </div>
+    <CardContainer>
+      <Description>{description}</Description>
+    </CardContainer>
   );
 };
 

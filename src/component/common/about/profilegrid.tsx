@@ -78,7 +78,7 @@ const ProfileGrid = () => {
       {data.map((item, index) => (
         <CardContainer key={index}>
           <Title>{item.title}</Title>
-          <Card description={item.description} />
+          <Card description={typeof item.description === 'string' ? item.description : item.description} />
         </CardContainer>
       ))}
     </GridContainer>
