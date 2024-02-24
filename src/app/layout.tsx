@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/component/common/navbar";
 import Footer from "@/component/common/footer";
 import Provider from "@/app/Provider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 export default function RootLayout({
