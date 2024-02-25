@@ -19,7 +19,7 @@ export default function Home() {
 </div>
     <div className="flex gap-4 para">
       <p>Hi !</p>
-      <p>Myself</p>
+      <p>I'm</p>
       <p>Aryan</p>
     </div>
     <Link href="/work" target="_blank" className="button first"><button>Work</button><span className="span1"></span></Link>

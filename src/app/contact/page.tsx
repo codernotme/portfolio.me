@@ -2,7 +2,7 @@ import React from "react";
 import ContactForm from "@/component/common/contact/contact";
 export default function Contact(){
     return (
-        <main className="flex flex-col items-center justify-between ">
+        <main className="flex flex-col items-center justify-between contact">
   <h1 className="keep">&bull; Keep in Touch &bull;</h1>
   <div className="underline">
   </div>
@@ -12,6 +12,20 @@ export default function Contact(){
       <path d="M70.865,101.78c0,4.774,3.886,8.657,8.66,8.657c4.774,0,8.657-3.883,8.657-8.657c0-4.773-3.883-8.656-8.657-8.656    C74.751,93.124,70.865,97.006,70.865,101.78z"></path>
     </svg>
   </div> <ContactForm />
+  <div className="area" >
+            <ul className="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
         </main>
     );
 }
