@@ -16,7 +16,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="jumbotron jumbotron-fluid" style={{ backgroundColor: 'transparent'}} id="Portfolio">
+    <div className="jumbotron jumbotron-fluid" style={{ backgroundColor: 'transparent' }} id="Portfolio">
       <div className="container" >
         <div className="row">
           <div className="col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
@@ -61,8 +61,8 @@ export default function Portfolio() {
         </div>
         <div className="row top-buffer">
           <div className="col-xs-12 col-md-4">
-            
-          <article className="card" style={{ backgroundColor: '#111111' }}>
+
+            <article className="card" style={{ backgroundColor: '#111111' }}>
               <div className="card-block">
                 <h4 className="card-title"> Minecraft</h4>
                 <p className="card-text"> An AI generated minecraft character in wooden theme in 3D </p>

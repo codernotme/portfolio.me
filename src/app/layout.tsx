@@ -15,11 +15,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Provider>
-        <Navbar/>
-        {children}
-        <Footer/>
+          <Navbar />
+          {children}
+          <Footer />
         </Provider>
-        </body>
+      </body>
     </html>
   );
 }
