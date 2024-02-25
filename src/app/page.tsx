@@ -16,7 +16,6 @@ export default function Home() {
   </svg>
 <div className="blur1"></div>
 <div className="blur"><Avatar src="./images/coder.png" className="w-80 h-80 avatar"/></div>
-  
 </div>
     <div className="flex gap-4 para">
       <p>Hi !</p>

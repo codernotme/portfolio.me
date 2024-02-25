@@ -6,6 +6,7 @@ import ProfileGrid from '@/component/common/about/profilegrid';
 export default function About(){
     return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 lg:p-12">
+    <div className="blur1"></div>
     <div className="grid-card">
     <Card
       isFooterBlurred

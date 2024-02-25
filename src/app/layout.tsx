@@ -1,5 +1,5 @@
 "use client";
-import "./globals.css";
+import "./globals.scss";
 import Navbar from "@/component/common/navbar";
 import Footer from "@/component/common/footer";
 import Provider from "@/app/Provider";

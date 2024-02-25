@@ -33,8 +33,10 @@ const Title = styled.h2`
 `;
 
 const CardContainer = styled.div`
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url('/images/background-card.jpg');
+  background-size: cover;
   padding: 20px;
+  border: 0.5px solid #ffff;
   border-radius: 10px;
 `;
 
