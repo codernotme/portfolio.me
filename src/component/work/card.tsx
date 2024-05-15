@@ -23,6 +23,7 @@ export default function Portfolio() {
           </div>
         </div>
         <div className="row">
+          {/*----------ALLOTALK.In----------- */}
           <div className="col-xs-12 col-md-4">
             <article className="card" style={{ backgroundColor: '#111111' }}>
               <img className="card-img-top img-fluid cursor-pointer" src="/img/allotalk-poster.png" alt="allotalk" onClick={() => window.open("https://allotalk.in", "_blank")}
@@ -33,16 +34,18 @@ export default function Portfolio() {
               </div>
             </article>
           </div>
-          <div className="col-xs-12 col-md-4">
+          {/*--------Kirby Game---------- */}
+          <div className='col-xs-12 col-md-4'>
             <article className="card" style={{ backgroundColor: '#111111' }}>
-              <img className="card-img-top img-fluidcursor-pointer" src="/img/robo.png" alt="robot" />
               <div className="card-block">
-                <h4 className="card-title"> 3d Robo </h4>
-                <p className="card-text"> An AI generated 3d robot </p>
+                <h4 className="card-title"> Kirby Game</h4>
+                <p className="card-text"> Kirby Game using Vite and tyscript </p>
               </div>
+              <img className="card-img-bottom img-fluid cursor-pointer" src="/img/kirby.png" alt="kirbygame" onClick={() => window.open("https://kirby-game-ts.vercel.app/", "_blank")} />
             </article>
-          </div>
-          <div className="col-xs-12 col-md-4">
+            </div>
+            {/*--------Github----------- */}
+            <div className="col-xs-12 col-md-4">
             <article>
               <Card className="col-span-12 sm:col-span-4 h-[800px]">
                 <CardHeader className="absolute z-10 top-1 flex-col !items-start">
@@ -54,22 +57,35 @@ export default function Portfolio() {
                   alt="Card background"
                   className="z-0 w-full h-full object-cover cursor-pointer"
                   src="/img/github.png"
+                  onClick={() => window.open("https://github.com/codernotme", "_blank")}
                 />
               </Card>
             </article>
           </div>
         </div>
         <div className="row top-buffer">
+          {/*--------ROBO----------- */}
           <div className="col-xs-12 col-md-4">
-
+            <article className="card" style={{ backgroundColor: '#111111' }}>
+              <img className="card-img-top img-fluidcursor-pointer" src="/img/robo.png" alt="robot" />
+              <div className="card-block">
+                <h4 className="card-title"> 3d Robo </h4>
+                <p className="card-text"> An AI generated 3d robot </p>
+              </div>
+            </article>
+          </div>
+          {/*--------MINECRAFT----------- */}
+          <div className="col-xs-12 col-md-4">
             <article className="card" style={{ backgroundColor: '#111111' }}>
               <div className="card-block">
                 <h4 className="card-title"> Minecraft</h4>
                 <p className="card-text"> An AI generated minecraft character in wooden theme in 3D </p>
               </div>
               <img className="card-img-bottom img-fluid cursor-pointer" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e42882186661193.6579748bc4c57.png" alt="minecraft" onClick={() => window.open("https://www.behance.net/gallery/186661193/Minecraft-Character", "_blank")} />
-            </article></div>
-          <div className="col-xs-12 col-md-4">
+            </article>
+          </div>
+          {/*----------TACKLE----------- */}
+          {/*<div className="col-xs-12 col-md-4">
             <article>
               <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
                 <CardHeader className="absolute z-10 top-1 flex-col items-start">
@@ -92,7 +108,8 @@ export default function Portfolio() {
                   </Button>
                 </CardFooter>
               </Card></article>
-          </div>
+  </div>*/}
+  {/*----------CONNECT----------- */}
           <div className="col-xs-12 col-md-4">
             <article>
               <Card isFooterBlurred className="w-full h-[500px] col-span-12 sm:col-span-7">
@@ -118,7 +135,7 @@ export default function Portfolio() {
                       <p className="text-tiny text-white/60">And join my team.</p>
                     </div>
                   </div>
-                  <Button radius="full" size="sm">Join</Button>
+                  <Button radius="full" size="sm" onClick={() => window.open('https://www.linkedin.com/in/codernotme/', '_blank')}>Join</Button>
                 </CardFooter>
               </Card>
             </article>
