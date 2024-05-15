@@ -20,6 +20,10 @@ $app-color: #2b2a49;
   --accent: hsl(0, 100%, 94%);
   --accentBg: hsla(155, 100%, 94%, 1%);
   --accentHi: hsla(155, 100%, 100%, 25%);
+  --tertiary: hsl(31, 100%, 50%);
+  --tertiaryBg: hsla(31, 100%, 50%, 0.497);
+  --tertiaryHi: hsla(31, 100%, 60%, 25%);
+  --tertiaryFg: hsl(0, 0%, 100%);
 }
 
 html {
@@ -220,6 +224,29 @@ button {
   background-color: var(--secondaryHi);
 }
 
+.button.fourth {
+  bottom: 55%;
+  right: 5%;
+}
+
+.button.fourth > button {
+  background-color: var(--tertiaryBg);
+  box-shadow: 0px -3px 15px 0px var(--tertiary) inset;
+  color: var(--tertiaryFg);
+  font-size: 28px;
+  width: fit-content;
+  padding: 10px 10px;
+}
+
+.button.fourth > span {
+  background-color: var(--tertiaryHi);
+}
+
+.button.fourth :hover{
+  border: 2px solid gold;
+}
+
+// Media queries
 @media screen and (max-width: 1000px) {
   .para {
     font-size: 4rem;

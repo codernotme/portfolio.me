@@ -31,7 +31,15 @@ export default function About() {
               <PopoverContent>
                 <div className="px-1 py-2">
                   <div className="card-about">
-                    With a keyboard as my canvas and code as my brushstrokes, I, Aryan Bajpai, paint the future. This 20-year-old tech virtuoso from India blends web development, Python, C, and Next.js into captivating digital experiences. But beyond the realm of code, I weave UI/UX magic, craft stunning visuals, and wield MySQL with masterful precision. A passionate innovator, I merge AI with my skills, forever chasing the thrill of pushing boundaries. Let's connect and explore the limitless possibilities of technology together.</div>
+                    I am a Full Stack Developer with expertise in UI/UX. I have
+                    experience working with Next.js, React, MongoDB, Python, Java,
+                    and C++, and I am currently seeking a position where I can
+                    utilize my diverse skillset. I am open to Full-Stack, Front-End, or
+                    Software Development roles in a collaborative team
+                    environment. My goal is to build innovative applications and
+                    contribute to a company that values mutual development. I
+                    am eager to learn and grow within such a company.
+                  </div>
                 </div>
               </PopoverContent>
             </Popover>

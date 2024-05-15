@@ -25,6 +25,7 @@ export default function Home() {
       <Link href="/work" target="_blank" className="button first"><button>Work</button><span className="span1"></span></Link>
       <Link href="/about" target="_blank" className="button sec"><button>About</button><span className="span1"></span></Link>
       <Link href="/contact" target="_blank" className="button third"><button>Connect</button><span className="span1"></span></Link>
+      <Link target="_blank" href="/aryanbajpairesume.pdf" className="button fourth" ><button style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', flexDirection: 'row'}}><i className="fa-solid fa-file-pdf"></i></button><span className="span1"></span></Link>
       <svg className="top-right" width="219" height="147" viewBox="0 0 219 147" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect opacity="0.18" x="10.4252" y="75.8326" width="7.50168" height="7.50168" transform="rotate(110.283 10.4252 75.8326)" fill="#686868" stroke="white" strokeWidth="1.22683" />
         <rect opacity="0.18" x="180.869" y="138.825" width="7.50168" height="7.50168" transform="rotate(110.283 180.869 138.825)" fill="#686868" stroke="white" strokeWidth="1.22683" />

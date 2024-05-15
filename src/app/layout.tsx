@@ -13,6 +13,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <title>Portfolio</title>
+        <script src="https://kit.fontawesome.com/be9855a3b3.js" crossOrigin="anonymous"></script>
+      </head>
       <body>
         <Provider>
           <Navbar />
