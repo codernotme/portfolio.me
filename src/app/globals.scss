@@ -334,7 +334,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   color: var(--textDim);
   width: 100%;
   box-sizing: border-box;
@@ -364,9 +364,13 @@ body {
 }
 
 .card {
-  background-color: #333;
+  background-color: #040404;
   color: #fff;
-  padding: 20px;
+  padding: 0 10px;
+  text-align: center;
+  justify-content: center;
+  height: auto;
+  width: 350px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
@@ -379,6 +383,82 @@ body {
 .card h2 {
   margin-top: 0;
 }
+/*------Work background--------*/
+@keyframes move {
+  100% {
+      transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+.background span {
+  width: 29vmin;
+  height: 29vmin;
+  border-radius: 29vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 49;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+  color: #d6adff;
+  top: 74%;
+  left: 50%;
+  animation-duration: 10s;
+  animation-delay: -8s;
+  transform-origin: -2vw -2vh;
+  box-shadow: 58vmin 0 7.814692684148751vmin currentColor;
+}
+.background span:nth-child(1) {
+  color: #d6adff;
+  top: 55%;
+  left: 8%;
+  animation-duration: 6s;
+  animation-delay: -9s;
+  transform-origin: -7vw 25vh;
+  box-shadow: 58vmin 0 7.454696365927345vmin currentColor;
+}
+.background span:nth-child(2) {
+  color: #fc1d60;
+  top: 54%;
+  left: 61%;
+  animation-duration: 7s;
+  animation-delay: -1s;
+  transform-origin: -9vw -14vh;
+  box-shadow: 58vmin 0 7.908886172244604vmin currentColor;
+}
+.background span:nth-child(3) {
+  color: #a6ec51;
+  top: 40%;
+  left: 82%;
+  animation-duration: 7s;
+  animation-delay: -2s;
+  transform-origin: -18vw 10vh;
+  box-shadow: 58vmin 0 7.473874057409633vmin currentColor;
+}
+.background span:nth-child(4) {
+  color: #fc1d60;
+  top: 19%;
+  left: 54%;
+  animation-duration: 12s;
+  animation-delay: -2s;
+  transform-origin: 15vw -20vh;
+  box-shadow: -58vmin 0 7.9674638998387195vmin currentColor;
+}
+
 
 .card p {
   margin-bottom: 0;
@@ -772,14 +852,11 @@ body {
     clip: rect(92px, 9999px, 48px, 0);
   }
 }
-
-.work {
-  margin-top: -30px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("/images/work.svg");
-  background-size: cover;
-  height: 100%;
-  width: 100%;
+.work{
+  justify-content: center;
+  padding: 0 10px;
+  align-items: center;
+  align-content: center;
 }
 
 .circles {

@@ -106,7 +106,7 @@ export default function Portfolio() {
           {/* Render cards dynamically */}
           {cards.map((card, index) => (
             <div key={index} className="col-xs-12 col-md-4">
-              <article className="card" style={{ backgroundColor: '#111111' }}>
+              <article className="card" style={{backgroundColor: '#2d3436',backgroundImage: 'linear-gradient(315deg, #2d3436 0%, #000000 74%)', marginBottom: '10px', border: '1px solid blue', boxShadow: '0 4px 8px 0 rgba(0, 247, 218, 0.2), 0 6px 20px 0 rgba(5, 253, 125, 0.19)'}}>
                 {/* Select image based on card */}
                 <img className="card-img-top img-fluid cursor-pointer" src={`/img/${card.image}`} alt={card.title} />
                 <div className="card-block">
