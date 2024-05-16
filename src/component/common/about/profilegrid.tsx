@@ -48,11 +48,20 @@ const ImageContainer = styled.div`
 
 const ProfileGrid = () => {
   const data = [
-    { title: 'Artistry in Code', description: 'Full Stack Sorcerer, AI Alchemist, UI/UX Artisan, API Enchanter, Pythonista' },
-    { title: 'Web Symphony', description: 'I specialize in conjuring robust and user-centric web applications, casting spells with: HTML5, CSS3, JavaScript, React.js, Next.js, Node.js, Express, MongoDB, MySQL' },
-    { title: 'AI Wizardry', description: 'Not just a coder, but an AI enthusiast! My expertise extends to crafting cutting-edge AI tools, from potent chatbots like ChatGPT to applications in natural language processing, computer vision, and beyond. Lets transform visionary ideas into sentient solutions!' },
+      {
+        "title": "Full-Stack Mastery",
+        "description": "I leverage my expertise in front-end (UI/UX), back-end development, and APIs (Python focus) to craft exceptional web experiences."
+      },
+      {
+        "title": "Web Development Virtuoso",
+        "description": "I specialize in building robust and user-friendly web applications utilizing modern technologies like HTML5, CSS3, JavaScript (React.js, Next.js), Node.js (Express), and databases (MongoDB, MySQL)."
+      },
+      {
+        "title": "AI & Machine Learning Expertise",
+        "description": "Beyond coding, I possess a passion for AI. I create cutting-edge solutions using technologies like chatbots (similar to ChatGPT), natural language processing, and computer vision. Let's turn your ideas into intelligent realities."
+      },
     {
-      title: 'Tech Tapestry', description: (
+      title: 'Tech Stack', description: (
         <ImageContainer>
           <img src="https://img.icons8.com/color/64/000000/html-5.png" alt="HTML5" />
           <img src="https://img.icons8.com/color/64/000000/css3.png" alt="CSS3" />
@@ -69,7 +78,7 @@ const ProfileGrid = () => {
       )
     },
     {
-      title: 'Cloud Harmony', description: (
+      title: 'Cloud Computing', description: (
         <ImageContainer>
           <img src="https://img.icons8.com/color/64/000000/amazon-web-services.png" alt="AWS" />
           <img src="https://img.icons8.com/color/64/000000/google-cloud-platform.png" alt="Google Cloud" />
