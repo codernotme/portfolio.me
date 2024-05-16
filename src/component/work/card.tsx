@@ -1,9 +1,11 @@
 'use client';
-import React, { useEffect } from 'react';
-import { Card, CardHeader, CardBody, CardFooter, Image, Button } from "@nextui-org/react";
-
+import React, { useEffect, useState } from 'react';
+import { Button, Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/react";
 
 export default function Portfolio() {
+  const [modalOpenIndex, setModalOpenIndex] = useState(-1); // State to track which modal is open, initialized with -1
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   useEffect(() => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -15,131 +17,146 @@ export default function Portfolio() {
     };
   }, []);
 
+  // Define array of objects containing card information
+  const [cards, setCards] = useState([
+    {
+      id: 1,
+      title: "Allotalk.in",
+      description: "It is a PHP based chatting platform",
+      link: "https://allotalk.in",
+      content: "It's a PHP based real-time chat application. It is fully functional.",
+      image: 'allotalk-poster.png'
+    },
+    {
+      id: 2,
+      title: "Kirby Game",
+      description: "by using Vite and TypeScript",
+      link: "https://kirby-game-ts.vercel.app/",
+      content: "This is a simple Kirby-themed game built using Vite for bundling, Vanilla TypeScript for the game logic, and type-checking.",
+      image: 'kirby.png'
+    },
+    {
+      id: 3,
+      title: "Todo-List",
+      description: "Todo list using html css",
+      link: "https://codernotme.github.io/todo-list-html/",
+      content: "This project serves as a practice exercise for implementing basic concepts of HTML, CSS, and JS to create a Todo-List.",
+      image: 'todo.png'
+    },
+    {
+      id: 4,
+      title: "Amazone Clone",
+      description: "Simple amazon home page clone",
+      link: "https://amazon-clone-seven-blush.vercel.app/",
+      content: "It is a simple Amazon Home page clone using Html and css",
+      image: 'amazon.png'
+    },
+    {
+      id: 5,
+      title: "PortXme",
+      description: "Portfolio site",
+      link: "https://portxme.vercel.app/",
+      content: "This is an earlier version of my portfolio website",
+      image: 'portxme.png'
+    },
+    {
+      id: 6,
+      title: "Portfolio",
+      description: "Portfolio site",
+      link: "https://github.com/codernotme/portfolio.me",
+      content: "For the project codes you can click on the link below",
+      image: 'portfolio.png'
+    },
+    {
+      id: 7,
+      title: "GitHub",
+      description: "GitHub Profile",
+      link: "https://github.com/codernotme",
+      content: "If you want to see the codes and my other porjects. You can check out my GitHub profile",
+      image: 'github.png'
+    }
+    // Add more objects for additional cards
+  ]);
+
+  // Function to shuffle array randomly
+  const shuffleArray = (array: { id: number; title: string; description: string; link: string; content: string; image: string; }[]) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+    }
+    return shuffledArray;
+  };
+
+  useEffect(() => {
+    // Shuffle cards array randomly
+    setCards(shuffleArray(cards));
+  }, []);
+
+  // Function to handle opening modal for a specific card
+  const handleOpenModal = (index: React.SetStateAction<number>) => {
+    setModalOpenIndex(index);
+    onOpen();
+  };
+
   return (
     <div className="jumbotron jumbotron-fluid" style={{ backgroundColor: 'transparent' }} id="Portfolio">
-      <div className="container" >
+      <div className="container">
         <div className="row">
-          <div className="col-xs-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-          </div>
-        </div>
-        <div className="row">
-          {/*----------ALLOTALK.In----------- */}
-          <div className="col-xs-12 col-md-4">
-            <article className="card" style={{ backgroundColor: '#111111' }}>
-              <img className="card-img-top img-fluid cursor-pointer" src="/img/allotalk-poster.png" alt="allotalk" onClick={() => window.open("https://allotalk.in", "_blank")}
-              />
-              <div className="card-block">
-                <h4 className="card-title"> Allotalk.in </h4>
-                <p className="card-text"> It is a PHP based chatting platfrom</p>
-              </div>
-            </article>
-          </div>
-          {/*--------Kirby Game---------- */}
-          <div className='col-xs-12 col-md-4'>
-            <article className="card" style={{ backgroundColor: '#111111' }}>
-              <div className="card-block">
-                <h4 className="card-title"> Kirby Game</h4>
-                <p className="card-text"> Kirby Game using Vite and tyscript </p>
-              </div>
-              <img className="card-img-bottom img-fluid cursor-pointer" src="/img/kirby.png" alt="kirbygame" onClick={() => window.open("https://kirby-game-ts.vercel.app/", "_blank")} />
-            </article>
+          {/* Render cards dynamically */}
+          {cards.map((card, index) => (
+            <div key={index} className="col-xs-12 col-md-4">
+              <article className="card" style={{ backgroundColor: '#111111' }}>
+                {/* Select image based on card */}
+                <img className="card-img-top img-fluid cursor-pointer" src={`/img/${card.image}`} alt={card.title} />
+                <div className="card-block">
+                  <h4 className="card-title"><Button onPress={() => handleOpenModal(index)} color={'primary'}>{card.title}</Button></h4>
+                  <p className="card-text">{card.description}</p>
+                </div>
+                <Modal isOpen={isOpen && modalOpenIndex === index} onOpenChange={onOpenChange} style={{backgroundColor: '#000',color: 'white', border:'2px solid #fff'}}
+                backdrop='blur' motionProps={{
+                  variants: {
+                    enter: {
+                      y: 0,
+                      opacity: 1,
+                      transition: {
+                        duration: 0.3,
+                        ease: "easeOut",
+                      },
+                    },
+                    exit: {
+                      y: -20,
+                      opacity: 0,
+                      transition: {
+                        duration: 0.2,
+                        ease: "easeIn",
+                      },
+                    },
+                  }
+                }}
+                  placement='center'>
+                  <ModalContent>
+                    {(onClose) => (
+                      <>
+                        <ModalHeader className="flex flex-col gap-1">{card.title}</ModalHeader>
+                        <ModalBody>
+                          <p>{card.content}</p>
+                        </ModalBody>
+                        <ModalFooter>
+                          <Button color="danger" variant="light" onPress={onClose}>
+                            Close
+                          </Button>
+                          <Button color="primary" onPress={() => window.open(card.link, "_blank")}>
+                            Link
+                          </Button>
+                        </ModalFooter>
+                      </>
+                    )}
+                  </ModalContent>
+                </Modal>
+              </article>
             </div>
-            {/*--------Github----------- */}
-            <div className="col-xs-12 col-md-4">
-            <article>
-              <Card className="col-span-12 sm:col-span-4 h-[800px]">
-                <CardHeader className="absolute z-10 top-1 flex-col !items-start">
-                  <p className="text-tiny text-white/60 uppercase font-bold">Explore More pojects?</p>
-                  <h4 className="text-white font-medium text-large">Check out my github.</h4>
-                </CardHeader>
-                <Image
-                  removeWrapper
-                  alt="Card background"
-                  className="z-0 w-full h-full object-cover cursor-pointer"
-                  src="/img/github.png"
-                  onClick={() => window.open("https://github.com/codernotme", "_blank")}
-                />
-              </Card>
-            </article>
-          </div>
-        </div>
-        <div className="row top-buffer">
-          {/*--------ROBO----------- */}
-          <div className="col-xs-12 col-md-4">
-            <article className="card" style={{ backgroundColor: '#111111' }}>
-              <img className="card-img-top img-fluidcursor-pointer" src="/img/robo.png" alt="robot" />
-              <div className="card-block">
-                <h4 className="card-title"> 3d Robo </h4>
-                <p className="card-text"> An AI generated 3d robot </p>
-              </div>
-            </article>
-          </div>
-          {/*--------MINECRAFT----------- */}
-          <div className="col-xs-12 col-md-4">
-            <article className="card" style={{ backgroundColor: '#111111' }}>
-              <div className="card-block">
-                <h4 className="card-title"> Minecraft</h4>
-                <p className="card-text"> An AI generated minecraft character in wooden theme in 3D </p>
-              </div>
-              <img className="card-img-bottom img-fluid cursor-pointer" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e42882186661193.6579748bc4c57.png" alt="minecraft" onClick={() => window.open("https://www.behance.net/gallery/186661193/Minecraft-Character", "_blank")} />
-            </article>
-          </div>
-          {/*----------TACKLE----------- */}
-          {/*<div className="col-xs-12 col-md-4">
-            <article>
-              <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-5">
-                <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                  <p className="text-tiny text-white/60 uppercase font-bold">New</p>
-                  <h4 className="text-black font-medium text-2xl">Tackle Studioz</h4>
-                </CardHeader>
-                <Image
-                  removeWrapper
-                  alt="Card example background"
-                  className="z-0 w-full h-full scale-125 -translate-y-6 object-cover cursor-pointer"
-                  src="/img/tackle-grad.png"
-                />
-                <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-between">
-                  <div>
-                    <p className="text-black text-tiny">Available soon.</p>
-                    <p className="text-black text-tiny">Check out.</p>
-                  </div>
-                  <Button className="text-tiny" onClick={() => window.open('https://www.linkedin.com/company/tackle-studioz/', '_blank')} color="primary" radius="full" size="sm">
-                    View now
-                  </Button>
-                </CardFooter>
-              </Card></article>
-  </div>*/}
-  {/*----------CONNECT----------- */}
-          <div className="col-xs-12 col-md-4">
-            <article>
-              <Card isFooterBlurred className="w-full h-[500px] col-span-12 sm:col-span-7">
-                <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                  <p className="text-tiny text-white/60 uppercase font-bold">UpComing project</p>
-                  <h4 className="text-white/90 font-medium text-xl">Wanna know more about my upcoming projects?</h4>
-                </CardHeader>
-                <Image
-                  removeWrapper
-                  alt="Relaxing app background"
-                  className="z-0 w-full h-full object-cover cursor-pointer"
-                  src="/img/connect.jpg"
-                />
-                <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-                  <div className="flex flex-grow gap-2 items-center">
-                    <Image
-                      alt="Breathing app icon"
-                      className="rounded-full w-10 h-11 bg-black cursor-pointer"
-                      src="/img/connect.jpg"
-                    />
-                    <div className="flex flex-col">
-                      <p className="text-tiny text-white/60">Apply Today</p>
-                      <p className="text-tiny text-white/60">And join my team.</p>
-                    </div>
-                  </div>
-                  <Button radius="full" size="sm" onClick={() => window.open('https://www.linkedin.com/in/codernotme/', '_blank')}>Join</Button>
-                </CardFooter>
-              </Card>
-            </article>
-          </div>
+          ))}
         </div>
       </div>
     </div>
