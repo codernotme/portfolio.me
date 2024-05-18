@@ -73,22 +73,22 @@ export default function Socials(): JSX.Element {
   return (
     <div className="socials">
       <div className="socials-item">
-        <a href="https://www.linkedin.com/in/codernotme/" className="socials-item-icon socials-item-icon__linkedin" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/codernotme/" className="socials-item-icon socials-item-icon__linkedin"  rel="noopener noreferrer">
           <i><span></span></i>
         </a>
       </div>
       <div className="socials-item">
-        <a href="https://codepen.io/codernotme/" className="socials-item-icon socials-item-icon__codepen" target="_blank" rel="noopener noreferrer">
+        <a href="https://codepen.io/codernotme/" className="socials-item-icon socials-item-icon__codepen"  rel="noopener noreferrer">
           <i><span></span></i>
         </a>
       </div>
       <div className="socials-item">
-        <a href="https://github.com/codernotme" className="socials-item-icon socials-item-icon__github" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/codernotme" className="socials-item-icon socials-item-icon__github"  rel="noopener noreferrer">
           <i><span></span></i>
         </a>
       </div>
       <div className="socials-item">
-        <a href="https://www.instagram.com/outta_urreach/" className="socials-item-icon socials-item-icon__instagram" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/outta_urreach/" className="socials-item-icon socials-item-icon__instagram"  rel="noopener noreferrer">
           <i><span></span></i>
         </a>
       </div>
