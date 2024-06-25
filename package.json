@@ -25,7 +25,8 @@
     "react-toastify": "^10.0.5",
     "sass": "^1.71.1",
     "styled-components": "^6.1.8",
-    "yup": "^1.4.0"
+    "yup": "^1.4.0",
+    "type": "module"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
